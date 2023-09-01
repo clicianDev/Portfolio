@@ -1,0 +1,92 @@
+[
+    
+    {
+      "title": "Clician Dev",
+      "description": "Full Stack Developer",
+      "camPos": {
+        "x": 10,
+        "y": 5,
+        "z": 0
+      },
+      "lookAt": {
+        "x": 1.9,
+        "y": 0.8,
+        "z": 0
+      }
+    },
+    {
+      "title": "K",
+      "description": "Game Developer",
+      "camPos": {
+        "x": 1,
+        "y": 1,
+        "z": -10
+      },
+      "lookAt": {
+        "x": -0.5,
+        "y": 1,
+        "z": 0.5
+      }
+    },
+    {
+      "title": "Arnold",
+      "description": "Game Developer",
+      "camPos": {
+        "x": 1,
+        "y": 1,
+        "z": -10
+      },
+      "lookAt": {
+        "x": -1,
+        "y": 1,
+        "z": -0.5
+      }
+    },
+
+    {
+      "title": "Luigi",
+      "description": "Lead UI/UX Designer",
+      "camPos": {
+        "x": 0,
+        "y": 0,
+        "z": -2
+      },
+      "lookAt": {
+        "x": 2,
+        "y": 1,
+        "z": -2.2
+      }
+    },
+
+    {
+      "title": "Chris",
+      "description": "UI/UX Designer",
+      "camPos": {
+        "x": 0,
+        "y": 0,
+        "z": -2
+      },
+      "lookAt": {
+        "x": 2,
+        "y": 1,
+        "z": -1.2
+      }
+    },
+
+    {
+      "title": "Dj",
+      "description": "Scrum Master/ Project Manager",
+      "camPos": {
+        "x": 1,
+        "y": 2,
+        "z": 1
+      },
+      "lookAt": {
+        "x": 0,
+        "y": 1,
+        "z": -4
+      }
+    }
+    
+  ]
+  
