@@ -36,16 +36,25 @@ function Animate({ controls, lerping, to, target }) {
   useFrame(({ camera }, delta) => {
     if (lerping) {
       camera.position.lerp(to, delta * 2)
-      controls.current.target.lerp(target, delta * 2)
+     
     }
   })
 }
 
 const Room = ({ isMobile }) => {
   const room = useGLTF("./room/room.gltf");
+  const mesh = useRef();
+  const rotationSpeed = 0.05; // Adjust the rotation speed as needed
+  const maxRotationY = 0.50; // Set the maximum Y-axis rotation value
 
+  useFrame(() => {
+    // Rotate on the Y-axis only if the current rotation is less than maxRotationY
+    if (mesh.current.rotation.y < maxRotationY) {
+      mesh.current.rotation.y += rotationSpeed;
+    }
+  });
   return (
-    <mesh>
+    <mesh ref={mesh}>
       <primitive
         object={room.scene}
         // scale={isMobile ? 0.7 : 1}
@@ -66,7 +75,16 @@ const PlainCube = () => {
   video.play();
   const [videoLoaded, setVideoLoaded] = useState(false);
   const videoTexture = new VideoTexture(video);
+  const mesh = useRef();
+  const rotationSpeed = 0.05; // Adjust the rotation speed as needed
+  const maxRotationY = 0.50; // Set the maximum Y-axis rotation value
 
+  useFrame(() => {
+    // Rotate on the Y-axis only if the current rotation is less than maxRotationY
+    if (mesh.current.rotation.y < maxRotationY) {
+      mesh.current.rotation.y += rotationSpeed;
+    }
+  });
   useEffect(() => {
     const handleLoadedData = () => {
       setVideoLoaded(true);
@@ -85,7 +103,7 @@ const PlainCube = () => {
 
 
   return (
-    <mesh position={[-1.150, 1.280, -1.5]} scale={[0.01, 0.800, 1.5]}>
+    <mesh ref={mesh} position={[-1.8, 1.25, -0.7]} scale={[0.01, 0.800, 1.5]}>
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial map={videoTexture} />
     </mesh>
@@ -93,14 +111,28 @@ const PlainCube = () => {
 };
 
 
-const RoomCanvas = () => {
+const RoomCanvas = (props) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [pageId, setPageId ]= useState(0);
   const ref = useRef()
   const [lerping, setLerping] = useState(false)
   const [to, setTo] = useState()
   const [target, setTarget] = useState()
   const [selected, setSelected] = useState(-1)
-
+  
+  useEffect(() => {
+    setPageId(props.pageId)
+    },[props.pageId])
+    
+    
+    useEffect(() => {
+      if (pageId >= 0 && pageId < annotations.length) {
+        gotoAnnotation(pageId);
+      
+      }
+    }, [pageId]);
+  
+  
   function gotoAnnotation(idx) {
     setTo(annotations[idx].camPos)
     setTarget(annotations[idx].lookAt)
@@ -108,6 +140,10 @@ const RoomCanvas = () => {
     setLerping(true)
   }
  
+const handleLoad = (index) => {
+  props.load(index);
+  
+}
   useEffect(() => {
     // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
@@ -137,7 +173,7 @@ const RoomCanvas = () => {
       gl={{ preserveDrawingBuffer: true }}
       onPointerDown={() => setLerping(false)} onWheel={() => setLerping(false)}
     >
-      <Suspense fallback={<CanvasLoader />}>
+      <Suspense fallback={<CanvasLoader  load={handleLoad}/>}>
         <OrbitControls 
           ref={ref}
            enableZoom={true}
@@ -149,7 +185,7 @@ const RoomCanvas = () => {
         <Lights/>
         <Room isMobile={isMobile} />
         <Me isMobile={isMobile} 
-         position={isMobile ? [0, 0,  0] : [1.85, 0, -0.2]}
+         position={isMobile ? [0, 0,  0] : [1.5, 0, -1.1]}
         />
          <PlainCube />
       </Suspense>

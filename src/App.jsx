@@ -3,13 +3,17 @@ import './App.css'
 import { BrowserRouter } from "react-router-dom";
 import Hero from './components/Hero'
 import Sidebar from './components/Sidebar';
-function App() {
 
+function App() {
+  const [pageId, setPageId] = useState(0)
+  const handlePageId = (index) => {
+    setPageId(index)
+  }
   return (
     <BrowserRouter>
     <div className='bg-tertiary'>
-      <Hero/>
-      <Sidebar/>  
+      <Hero pageId={pageId}/>
+      <Sidebar pageId={handlePageId}/>  
     </div>
      
     </BrowserRouter>

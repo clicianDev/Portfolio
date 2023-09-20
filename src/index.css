@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.left-fade {
+    animation-duration: 1s;;
+    animation-name: slideleft;
+}
+@keyframes slideleft {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: 0%;
+    }
+}
+
+.bottom-fade {
+    animation-duration: 1s;;
+    animation-name: slidebottom;
+}
+@keyframes slidebottom {
+    from {
+        margin-bottom: 100%;
+    }
+    to {
+        margin-bottom: 0%;
+    }
+}
+
+.fadein{
+    animation-duration: 1s;;
+    animation-name: fadein;
+}
+
+@keyframes fadein{
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+.showfade{
+    animation-duration: 1s;;
+    animation-name: showfade;
+}
+
+@keyframes showfade {
+    from {
+        opacity: 0%;
+    }
+    to {
+       opacity: 100%;
+    }
+}

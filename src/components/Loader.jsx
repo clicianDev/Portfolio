@@ -1,7 +1,13 @@
 import { Html, useProgress } from "@react-three/drei";
 
-const CanvasLoader = () => {
+const CanvasLoader = (props) => {
   const { progress } = useProgress();
+  
+  console.log(progress)
+
+  if(progress == 100){
+    props.load(true);
+  }
   return (
     <Html
       as='div'

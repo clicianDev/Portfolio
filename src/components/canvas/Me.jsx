@@ -6,12 +6,23 @@ Command: npx gltfjsx@6.2.10 public/characters/me/me.gltf
 import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import * as THREE from "three"; 
+import { useFrame } from "@react-three/fiber";
+
 
 const Me = (props) => {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('./characters/me/me.gltf')
   const { actions } = useAnimations(animations, group)
+  
+  const rotationSpeed = 0.05; // Adjust the rotation speed as needed
+  const maxRotationY = 0.50; // Set the maximum Y-axis rotation value
 
+  useFrame(() => {
+    // Rotate on the Y-axis only if the current rotation is less than maxRotationY
+    if (group.current.rotation.y < maxRotationY) {
+      group.current.rotation.y += rotationSpeed;
+    }
+  });
   useEffect(() => {
     const mixer = new THREE.AnimationMixer(group.current);
     if (animations[0]) {

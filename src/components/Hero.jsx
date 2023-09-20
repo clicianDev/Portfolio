@@ -2,18 +2,36 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import RoomCanvas from "./canvas/Room";
-const Hero = () => {
+import { useState, useEffect } from "react";
+
+const Hero = (props) => {
+const [isLoad, setIsLoad] = useState(false);
+const [pageId, setPageId] = useState(0)
+
+useEffect(() => {
+setPageId(props.pageId)
+},[props.pageId])
+
+
+  const handleLoad =(index) => {
+setIsLoad(index);
+  }
+
   return (
     <section className={`flex w-full h-screen mx-auto`}>
 
-    <RoomCanvas />
-      <div className={`absolute py-20 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 drop-shadow-2xl`}>
-        <div className="">
-          <h1 className={`${styles.heroHeadText} text-white `}>
+    <RoomCanvas className="" load={handleLoad} pageId={pageId}/>
+    <div
+        className={`${
+          isLoad ? 'block' : 'hidden' // Use a ternary operator to conditionally apply 'hidden' class
+        } py-20 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 drop-shadow-2xl`}
+      >
+       <div className="">
+          <h1 className={`${styles.heroHeadText} text-white left-fade`}>
             Hi, I'm <span className='text-primary'>Clician Deo</span> Full Stack Developer
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            We develop 3D visuals, user <br className='sm:block hidden' />
+          <p className={`${styles.heroSubText} mt-2 text-white-100 showfade`}>
+            I develop 3D visuals, user <br className='sm:block hidden' />
             interfaces and web applications
           </p>
         </div>
