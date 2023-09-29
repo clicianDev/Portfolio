@@ -1,11 +1,11 @@
 import React, { Suspense, useEffect, useState, useRef, } from "react";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF, Html } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF, Html, PerspectiveCamera } from "@react-three/drei";
 import Lights from "./Lights";
 import CanvasLoader from "../Loader";
 import Me from "./Me";
-import annotations from './annotations.json'
+import annotations from '../annotations.json'
 import { VideoTexture } from "three";
 import videoSource from "/video/tvplay.mp4";
 
@@ -165,11 +165,12 @@ const handleLoad = (index) => {
     };
   }, []);
 
+  
   return (
     <Canvas
       shadows
       dpr={[1, 2]}
-      camera={{ position: [10, 8, -12], fov: 25 }}
+      camera={{ position: [-1000, 8, -12], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
       onPointerDown={() => setLerping(false)} onWheel={() => setLerping(false)}
     >
