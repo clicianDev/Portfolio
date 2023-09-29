@@ -1,0 +1,32 @@
+[
+    {
+        "title": "FrontEnd",
+        "stacks": [
+            "react",
+            "vue",
+            "next.js",
+            "nuxt.js",
+            "three.js",
+            "wordpress",
+            "html5",
+            "css3"
+            
+        ]
+    },
+    {
+        "title": "BackEnd",
+        "stacks": [
+            "php",
+            "laravel",
+            "mySql",
+            "javascript",
+            "mongoDb",
+            "node.js",
+            "express",
+            "AWS"
+            
+           
+            
+        ]
+    }
+]

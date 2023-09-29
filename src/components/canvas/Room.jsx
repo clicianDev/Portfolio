@@ -170,15 +170,15 @@ const handleLoad = (index) => {
     <Canvas
       shadows
       dpr={[1, 2]}
-      camera={{ position: [-1000, 8, -12], fov: 25 }}
+      camera={{ position: [-300, 8, -12], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
-      onPointerDown={() => setLerping(false)} onWheel={() => setLerping(false)}
+      onPointerDown={() => setLerping(true)} onWheel={() => setLerping(true)}
     >
       <Suspense fallback={<CanvasLoader  load={handleLoad}/>}>
         <OrbitControls 
           ref={ref}
            enableZoom={true}
-            enableRotate={true}
+            enableRotate={false}
         />
          <Annotations selected={selected} gotoAnnotation={gotoAnnotation} />
         <Animate controls={ref} lerping={lerping} to={to} target={target} />

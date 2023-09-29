@@ -4,7 +4,7 @@ import { styles } from "../styles";
 import RoomCanvas from "./canvas/Room";
 import { useState, useEffect } from "react";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import Skills from "./pages/Skills";
 const Hero = (props) => {
   const [isLoad, setIsLoad] = useState(false);
   const [pageId, setPageId] = useState(0);
@@ -27,11 +27,12 @@ const Hero = (props) => {
           styles.paddingX
         } flex flex-row items-start gap-5 drop-shadow-2xl`}
       >
-        {pageId == 0 ? <Home /> : null}
-        {pageId == 1 ? <About /> : null}
+        <Home/>
+        {/* {pageId == 0 ? <Home /> : null}
+        {pageId == 1 ? <Skills /> : null} */}
       </div>
 
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+      <div className="fixed xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
           <div className=" w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
             <motion.div

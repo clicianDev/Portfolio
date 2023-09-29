@@ -3,7 +3,7 @@ import './App.css'
 import { BrowserRouter } from "react-router-dom";
 import Hero from './components/Hero'
 import Sidebar from './components/Sidebar';
-import About from './components/pages/About';
+import Skills from './components/pages/Skills';
 
 function App() {
   const [pageId, setPageId] = useState(0)
@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
     <div className='bg-tertiary'>
       <Hero pageId={pageId}/>
-      <About/>
+      <Skills/>
       <Sidebar pageId={handlePageId}/>  
     </div>
      
