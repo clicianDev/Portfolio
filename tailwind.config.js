@@ -16,9 +16,9 @@ export default {
       screens: {
         xs: "450px",
       },
-      // backgroundImage: {
-      //   "hero-pattern": "url('/src/assets/herobg.png')",
-      // },
+      backgroundImage: {
+        "backend-bg": "url('/src/assets/skills/backend.svg')",
+      },
     },
   },
   plugins: [],
