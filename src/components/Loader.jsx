@@ -3,8 +3,6 @@ import { Html, useProgress } from "@react-three/drei";
 const CanvasLoader = (props) => {
   const { progress } = useProgress();
   
-  console.log(progress)
-
   if(progress == 100){
     props.load(true);
   }
@@ -19,7 +17,7 @@ const CanvasLoader = (props) => {
         flexDirection: "column",
       }}
     >
-      <span className='canvas-loader'></span>
+      <span ></span>
       <p
         style={{
           fontSize: 14,
@@ -28,7 +26,7 @@ const CanvasLoader = (props) => {
           marginTop: 40,
         }}
       >
-        {progress.toFixed(2)}%
+        {progress.toFixed(0)}%
       </p>
     </Html>
   );
