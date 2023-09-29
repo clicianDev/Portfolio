@@ -170,7 +170,7 @@ const handleLoad = (index) => {
     <Canvas
       shadows
       dpr={[1, 2]}
-      camera={{ position: [-300, 8, -12], fov: 25 }}
+      camera={{ position: [10, 8, -12], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
       onPointerDown={() => setLerping(true)} onWheel={() => setLerping(true)}
     >
