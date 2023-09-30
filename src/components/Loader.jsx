@@ -2,13 +2,13 @@ import { Html, useProgress } from "@react-three/drei";
 
 const CanvasLoader = (props) => {
   const { progress } = useProgress();
-  
-  if(progress == 100){
+
+  if (progress == 100) {
     props.load(true);
   }
   return (
     <Html
-      as='div'
+      as="div"
       center
       style={{
         display: "flex",
@@ -17,7 +17,15 @@ const CanvasLoader = (props) => {
         flexDirection: "column",
       }}
     >
-      <span ></span>
+  
+      <div className="cube">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <span></span>
       <p
         style={{
           fontSize: 14,
