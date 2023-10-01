@@ -3,18 +3,18 @@ import { styles } from "../../../styles"
 function SkillsTree() {
   return (
    
-      <div className="flex flex-row gap-5">
+      <div className="flex flex-row gap-5 justify-evenly">
       <div>
-        <div>
-        <h2 className={`${styles.heroSubText} mt-2 text-white-100`}>
+        <div className="backendbg w-full "  >
+        <h2 className={`${styles.heroSubText} my-3 text-primary font-bold mx-20`}>
             FrontEnd
           </h2>
         </div>
         
       </div>
       <div>
-        <div className="backendbg w-max h-max">
-          <h2 className={`${styles.heroSubText} mt-2 text-white-100`}>
+        <div className="backendbg w-full ">
+          <h2 className={`${styles.heroSubText} my-3 text-primary font-bold mx-20`}>
               BackEnd
             </h2>
         </div>
