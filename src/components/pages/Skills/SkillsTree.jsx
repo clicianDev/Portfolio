@@ -14,10 +14,17 @@ function SkillsTree() {
             </h2>
           </div>
           <div class="vl" />
-          <div className="bg-backend-bg w-full h-full bg-cover bg-no-repeat grid grid-cols-4 gap-4">
+          <div className="bg-backend-bg w-full h-full bg-contain bg-no-repeat grid grid-cols-4 gap-4">
             {item.stacks.map((stack, stackIndex) => (
-              <div key={stackIndex} className={`bg-white ${stackIndex === 4 ? 'col-start-2  col-end-3' :''} ${stackIndex === 6 ? 'col-start-2  col-end-3' :''}`}>
-                {stack}
+              <div
+                key={stackIndex}
+                className={`bg-white ${
+                  stackIndex === 4 || stackIndex === 6
+                    ? "col-start-2 col-end-3"
+                    : ""
+                }`}
+              >{index === 0 ? <div>{stack}<img src={`/src/assets/skills/logo/frontend/${stack}.svg`}/></div> : stack }
+               
               </div>
             ))}
           </div>

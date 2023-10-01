@@ -19,7 +19,7 @@ function Skills() {
         <div className="w-1/2 flex flex-row gap-5">
         <TableSkills/>
         </div>
-        <div className="w-full">
+        <div className="w-full ">
         <SkillsTree/>
         </div>
       </div>
