@@ -5,17 +5,17 @@ import { styles } from "../../../styles";
 
 function TableSkills() {
   return (
-    <>
+    <div className="w-1/2 gap-5 ">
       {skills.map((item, index) => (
         <div key={index}>
-           <div className="backendbg"  >
-        <h2 className={`${styles.heroSubText} my-3 text-primary font-bold mx-20`}>
+           <div>
+        <h2 className={`${styles.heroSubText} uppercase  my-3 text-primary font-extrabold mx-20`}>
             {item.title}
           </h2>
         </div>
           <div className="sm:px-8 px-2">
             <ul
-              className={`list-disc font-medium lg:text-[24px] sm:text-[20px] xs:text-[16px] text-[16px] lg:leading-[40px] mt-2 text-white`}
+              className={`list-disc grid grid-cols-2 font-medium lg:text-[24px] sm:text-[20px] xs:text-[16px] text-[16px] lg:leading-[40px] mt-2 text-white`}
             >
               {item.stacks.map((item, index) => (
                 <motion.li
@@ -36,7 +36,7 @@ function TableSkills() {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 }
 

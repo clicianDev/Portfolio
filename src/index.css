@@ -57,8 +57,8 @@
     }
 }
 .backendbg{
-  background-image: url(/src/assets/skills/note.svg);
-  background-position: left;
+  background-image: url(./public/skills/note.svg);
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 5px;

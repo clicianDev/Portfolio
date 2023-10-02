@@ -6,7 +6,7 @@ import TableSkills from "./TableSkills";
 import SkillsTree from "./SkillsTree";
 function Skills() {
   return (
-    <div className="p-20">
+    <section className="p-20 w-full h-max mx-auto">
       <div
         className={`w-full mx-auto ${styles.paddingX} items-start gap-5 drop-shadow-2xl mb-20`}
       >
@@ -15,15 +15,15 @@ function Skills() {
            This skills data are from skills.json then map all the skills to display in jsx
           </p>
       </div>
-      <div className={`${styles.paddingX} flex `}>
-        <div className="w-1/2 flex flex-row gap-5">
+      <div className={`${styles.paddingX}  flex`}>
+       
         <TableSkills/>
-        </div>
+       
         <div className="w-full ">
         <SkillsTree/>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
