@@ -23,10 +23,7 @@
             "mongoDb",
             "node.js",
             "express",
-            "AWS"
-            
-           
-            
+            "AWS"       
         ]
     }
 ]
