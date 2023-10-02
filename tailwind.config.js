@@ -17,7 +17,7 @@ export default {
         xs: "450px",
       },
       backgroundImage: {
-        "backend-bg": "url('./skills/paint-bg.png')",
+        "backend-bg": "url('/skills/paint-bg.png')",
       },
     },
   },
