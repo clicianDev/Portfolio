@@ -4,12 +4,12 @@
         "stacks": [
             "react",
             "vue",
-            "next.js",
-            "nuxt.js",
-            "three.js",
+            "next",
+            "nuxt",
+            "three",
             "wordpress",
-            "html5",
-            "css3"
+            "html",
+            "css"
             
         ]
     },

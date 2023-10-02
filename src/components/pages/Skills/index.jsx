@@ -8,15 +8,18 @@ function Skills() {
   return (
     <div className="p-20">
       <div
-        className={`w-full mx-auto ${styles.paddingX} flex flex-row items-start gap-5 drop-shadow-2xl`}
+        className={`w-full mx-auto ${styles.paddingX} items-start gap-5 drop-shadow-2xl mb-20`}
       >
         <h1 className={`${styles.heroHeadText} text-white`}>Skills</h1>
+        <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+           This skills data are from skills.json then map all the skills to display in jsx
+          </p>
       </div>
       <div className={`${styles.paddingX} flex `}>
         <div className="w-1/2 flex flex-row gap-5">
         <TableSkills/>
         </div>
-        <div className="w-full">
+        <div className="w-full ">
         <SkillsTree/>
         </div>
       </div>

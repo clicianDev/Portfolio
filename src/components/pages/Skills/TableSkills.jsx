@@ -8,9 +8,11 @@ function TableSkills() {
     <>
       {skills.map((item, index) => (
         <div key={index}>
-          <h2 className={`${styles.heroSubText} mt-2 text-white-100`}>
+           <div className="backendbg"  >
+        <h2 className={`${styles.heroSubText} my-3 text-primary font-bold mx-20`}>
             {item.title}
           </h2>
+        </div>
           <div className="sm:px-8 px-2">
             <ul
               className={`list-disc font-medium lg:text-[24px] sm:text-[20px] xs:text-[16px] text-[16px] lg:leading-[40px] mt-2 text-white`}

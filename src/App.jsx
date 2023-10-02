@@ -17,6 +17,7 @@ function App() {
       <Hero pageId={pageId}/>
       <Skills/>
       <Sidebar pageId={handlePageId}/>  
+
     </div>
      
     </BrowserRouter>
