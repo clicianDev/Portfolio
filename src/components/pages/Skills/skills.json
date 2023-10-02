@@ -1,6 +1,6 @@
 [
     {
-        "title": "FrontEnd",
+        "title": "frontend",
         "stacks": [
             "react",
             "vue",
@@ -14,16 +14,16 @@
         ]
     },
     {
-        "title": "BackEnd",
+        "title": "backend",
         "stacks": [
             "php",
             "laravel",
-            "mySql",
+            "mysql",
             "javascript",
-            "mongoDb",
-            "node.js",
+            "mongodb",
+            "nodejs",
             "express",
-            "AWS"       
+            "aws"       
         ]
     }
 ]
