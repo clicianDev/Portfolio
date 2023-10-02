@@ -56,13 +56,12 @@
        opacity: 100%;
     }
 }
-
 .backendbg{
-    background-image: url(/src/assets/skills/note.svg);
-    background-position: left;
-    background-size: cover;
-    background-repeat: no-repeat;
-
+  background-image: url(/src/assets/skills/note.svg);
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 5px;
 }
 
 
@@ -195,7 +194,6 @@
       opacity: 1;
       -webkit-transform: scale(2);
               transform: scale(2); } }
-    padding: 5px;
 
 
 .vl {

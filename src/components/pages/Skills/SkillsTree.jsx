@@ -23,7 +23,7 @@ function SkillsTree() {
                     ? "col-start-2 col-end-3"
                     : ""
                 }`}
-              >{index === 0 ? <div>{stack}<img src={`/src/assets/skills/logo/frontend/${stack}.svg`}/></div> : stack }
+              >{index === 0 ? <div>{stack}<img src={`./src/assets/skills/logo/frontend/${stack}.svg`}/></div> : stack }
                
               </div>
             ))}
