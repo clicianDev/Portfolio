@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
-import { styles } from "../styles";
-import RoomCanvas from "./canvas/Room";
+import { styles } from "../../../styles";
+import RoomCanvas from "../../canvas/Room";
 import { useState, useEffect } from "react";
-import Home from "./pages/Home";
-import Skills from "./pages/Skills";
+import Home from "./Home";
+import Skills from "../Skills";
 const Hero = (props) => {
   const [isLoad, setIsLoad] = useState(false);
   const [pageId, setPageId] = useState(0);

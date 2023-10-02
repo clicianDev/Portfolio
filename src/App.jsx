@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { BrowserRouter } from "react-router-dom";
-import Hero from './components/Hero'
+import Hero from './components/pages/Hero'
 import Sidebar from './components/Sidebar';
 import Skills from './components/pages/Skills';
 
