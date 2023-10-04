@@ -1,27 +1,12 @@
-import { React, useState, useEffect } from "react";
-import RoomCanvas from "../canvas/Room";
-import Home from "./Hero/Home";
-import { motion } from "framer-motion";
-import { styles } from "../../styles";
-
-function About(props) {
-  const [isLoad, setIsLoad] = useState(false);
-  const [pageId, setPageId] = useState(0);
-
-  useEffect(() => {
-    setPageId(props.pageId);
-  }, [props.pageId]);
-
-  const handleLoad = (index) => {
-    setIsLoad(index);
-  };
-
+import React from "react";
+import { styles } from "../../../styles";
+function Info() {
   return (
-    <section className={` ${styles.paddingX}  flex w-auto h-max mx-auto`}>
-      <div className="w-1/2 ">a</div>
-      <div
-        className={` py-20 w-1/2 mx-auto ${styles.paddingX}  items-start gap-5 drop-shadow-2xl`}
-      >
+    <div
+      className={` py-20 w-1/2 mx-auto ${styles.paddingX}  items-start gap-5 drop-shadow-2xl`}
+    >
+      <div className="p-10">
+        {" "}
         <p className={`${styles.aboutSubText} mt-2 text-white-100`}>
           With over three years of web development experience, I started as a
           WordPress developer specializing in{" "}
@@ -47,6 +32,8 @@ function About(props) {
           <span className="hover:text-3xl hover:p-1 text-white">Three.js</span>{" "}
           for 3D visuals.
         </p>
+      </div>
+      <div className="p-10 hidden">
         <p className={`${styles.aboutSubText} mt-2 text-white-100`}>
           Additionally, I ventured into game development with{" "}
           <span className="underline text-secondary">Unreal Engine</span>,
@@ -66,8 +53,9 @@ function About(props) {
           <span className="underline text-secondary">Linux</span>.
         </p>
       </div>
-    </section>
+    </div>
   );
 }
 
-export default About;
+export default Info;
+

@@ -19,7 +19,7 @@ const Hero = (props) => {
 
   return (
     <section className={`flex w-full h-screen mx-auto`}>
-      <RoomCanvas load={handleLoad} pageId={pageId} />
+      <RoomCanvas load={handleLoad} pageId={pageId}  />
       <div
         className={`${
           isLoad ? "block " : "hidden" // Use a ternary operator to conditionally apply 'hidden' class

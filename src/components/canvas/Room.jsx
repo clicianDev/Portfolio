@@ -1,14 +1,17 @@
 import React, { Suspense, useEffect, useState, useRef, } from "react";
 
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF, Html, PerspectiveCamera } from "@react-three/drei";
+import { Canvas, useFrame, extend} from "@react-three/fiber";
+import { OrbitControls, Preload, useGLTF, Html, PerspectiveCamera, Effects, BakeShadows,  } from "@react-three/drei";
+import { UnrealBloomPass } from 'three-stdlib'
+
 import Lights from "./Lights";
 import CanvasLoader from "../Loader";
 import Me from "./Me";
 import annotations from '../annotations.json'
 import { VideoTexture } from "three";
 import videoSource from "/video/tvplay.mp4";
-
+import { color } from "framer-motion";
+extend({ UnrealBloomPass })
 
 function Annotations({ selected, gotoAnnotation }) {
   return (
@@ -51,7 +54,7 @@ const Room = ({ isMobile }) => {
     }
   });
   return (
-    <mesh ref={mesh}>
+    <mesh ref={mesh} castShadow receiveShadow>
       <primitive
         object={room.scene}
         // scale={isMobile ? 0.7 : 1}
@@ -168,9 +171,13 @@ const handleLoad = (index) => {
       shadows
       dpr={[1, 2]}
       camera={{ position: [10, 8, -12], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{ preserveDrawingBuffer: true, antialias:true }}
       onPointerDown={() => setLerping(true)} onWheel={() => setLerping(true)}
+     
     >
+       {/* <color attach="background" args={['#1C1D1C']} /> */}
+   
+       
       <Suspense fallback={<CanvasLoader  load={handleLoad}/>}>
         <OrbitControls 
           ref={ref}
@@ -184,7 +191,12 @@ const handleLoad = (index) => {
         <Room isMobile={isMobile} />
         <Me isMobile={isMobile} 
          position={isMobile ? [0, 0,  0] : [1.5, 0, -1.1]}
+         
         />
+         {/* <Effects disableGamma>
+        <unrealBloomPass threshold={1} strength={1.0} radius={0.5} />
+      </Effects>
+      <BakeShadows /> */}
          <PlainCube />
       </Suspense>
       
